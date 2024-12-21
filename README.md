@@ -36,7 +36,7 @@ A full-stack application that allows users to upload PDF documents and ask quest
 
 1. Python 3.8+
 2. Node.js 14+
-3. OpenAI API key
+3. Google Gemini Api Key
 4. Git
 
 ## Setup Instructions
@@ -51,12 +51,12 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 2. Install required packages:
 ```bash
-pip install fastapi uvicorn sqlalchemy python-multipart langchain chromadb openai pymupdf
-```
+pip install requirements.txt
 
 3. Set your OpenAI API key:
 ```bash
-export OPENAI_API_KEY='your-api-key-here'
+.env
+OPENAI_API_KEY='your-api-key-here'
 ```
 
 4. Start the backend server:
@@ -79,7 +79,7 @@ npm install @radix-ui/react-alert-dialog lucide-react
 
 3. Start the development server:
 ```bash
-npm run dev
+npm start
 ```
 
 
@@ -96,7 +96,7 @@ Uploads a PDF document and processes it for question answering.
 ```json
 {
   "filename": "string",
-  "id": "integer"
+  "file_id": "string"
 }
 ```
 
@@ -106,8 +106,11 @@ Asks a question about a specific document.
 **Request:**
 ```json
 {
-  "question": "string"
+  "question": "string",
+  "file_id": "string",
+  "chat_history": []
 }
+
 ```
 
 **Response:**
