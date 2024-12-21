@@ -10,19 +10,13 @@ A full-stack application that allows users to upload PDF documents and ask quest
 - Intuitive user interface with error handling
 - Document selection and management
 
+## Architecture
+
 ```mermaid
-
-
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│    Frontend     │     │    Backend      │     │    Storage      │
-│    (React.js)   │────▶│    (FastAPI)    │────▶│   (SQL)         │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-                              │
-                              │
-                        ┌─────▼─────┐
-                        │  PDF Store│
-                        │ (Uploads) │
-                        └───────────┘
+graph TD
+    A[Frontend React.js] --> B[Backend FastAPI]
+    B --> C[Storage SQL]
+    B --> D[PDF Store Uploads]
 ```
 ## Tech Stack
 
