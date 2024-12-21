@@ -10,6 +10,8 @@ A full-stack application that allows users to upload PDF documents and ask quest
 - Intuitive user interface with error handling
 - Document selection and management
 
+```mermaid
+
 
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
 │    Frontend     │     │    Backend      │     │    Storage      │
@@ -21,7 +23,7 @@ A full-stack application that allows users to upload PDF documents and ask quest
                         │  PDF Store│
                         │ (Uploads) │
                         └───────────┘
-
+```
 ## Tech Stack
 
 - **Backend**: FastAPI (Python)
@@ -52,6 +54,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 2. Install required packages:
 ```bash
 pip install requirements.txt
+```
 
 3. Set your OpenAI API key:
 ```bash
